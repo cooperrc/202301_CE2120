@@ -1,0 +1,7 @@
+rm docs/*
+
+for i in *.xopp
+  xournalpp -p docs/(basename $i .xopp).pdf $i
+  set name (basename $i .xopp)
+  echo "- [$name]($name.pdf)" >> docs/index.md
+end
